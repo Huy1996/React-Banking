@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import './css/navbar.css';
+import { useSelector } from "react-redux"
+import ScreenContainer from "./components/App/ScreenContainer";
+import NavBar from "./components/App/NavBar";
+import Footer from "./components/App/Footer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const userSignin = useSelector(state => state.userSignin);
+    const { userInfo } = userSignin;
+
+
+
+    return (
+        <div className="main">
+            <header className="app-header">
+                <h1> SJSU ONLINE BANKING </h1>
+                {userInfo && <NavBar/>}
+            </header>
+            <ScreenContainer />
+            { userInfo &&
+            (<footer id="app-footer">
+                <Footer/>
+            </footer>)}
+        </div>
+    );
 }
 
 export default App;

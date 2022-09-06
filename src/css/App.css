@@ -1,0 +1,173 @@
+body > #root > div {
+  height: 100vh;
+}
+
+body {
+  margin: auto;
+  background-color: white;
+}
+
+#app {
+  font-family: sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  height: 100%;
+}
+
+.app-header {
+  background-color: #282c34;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: float;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header h1 {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  padding: 20px 0 10px 0;
+}
+
+input[type="text"],
+input[type="password"] {
+  height: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+  background: #6cf0c2;
+}
+
+.Login {
+  background-color: gold;
+  padding: 2rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px;
+}
+
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+.logo{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  padding: 8px;
+}
+
+/*  footer css style */
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #282c34;
+  color:yellow;
+  text-align: center;
+}
+
+.div-container {
+  border-top: 4px solid;
+  margin-top: 1rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  color: black;
+  background-color:white;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  min-height: 100%;
+}
+
+.div-container img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.0);
+  max-width: 300px;
+}
+
+.div-container #group {
+  margin: 4% 0 0 0;
+}
+
+.div-container ul {
+  margin-top: 40px
+}
+
+.div-container ul li {
+  margin: 0 auto;
+}
+
+.div-container ul li:hover {
+  color: white;
+}
+
+#welcome-message {
+  background-color: darkblue;
+  width: 30%;
+  margin: 0 auto;
+  color: white;
+  font-size: 27px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+.fl-table {
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse ;
+  width: 95%;
+  margin: 0 auto;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.fl-table td, .fl-table th {
+  text-align: center;
+  padding: 8px;
+}
+
+.fl-table td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 18px;
+}
+
+.fl-table thead th {
+  color: #ffffff;
+  background: #4fc3a1;
+}
+
+.fl-table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324690;
+}
+
+.fl-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
