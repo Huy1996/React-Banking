@@ -34,10 +34,10 @@ export const userRegisterReducer = (state = {}, action) => {
                 loading: false,
                 message: action.payload.message,
             };
-        case uc.USER_SIGNIN_FAIL:
+        case uc.USER_REGISTER_FAIL:
             return {
                 loading: false,
-                error: action.payload.message,
+                error: action.payload,
             };
         default:
             return state;

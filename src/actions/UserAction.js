@@ -1,6 +1,6 @@
-import * as uc from '../constants/UserConstant'
-import {fetching} from "../helper";
-import * as method from "../constants/AJAXConstant"
+import * as uc from '../constants/UserConstant.js'
+import {fetching} from "../helper.js";
+import * as method from "../constants/AJAXConstant.js"
 
 
 export const signin = (username, password) => async (dispatch) => {

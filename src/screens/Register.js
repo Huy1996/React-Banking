@@ -1,12 +1,15 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import '../css/registration.css';
 import {register} from "../actions/UserAction";
 import LoadingBox from "../components/Loading/LoadingBox";
 import MessageBox from "../components/Loading/MessageBox";
+import {USER_REGISTER_FAIL} from "../constants/UserConstant";
+import {useNavigate} from "react-router-dom";
 
 export default function Register(props){
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [username, set_username] = useState("");
     const [password, set_password] = useState("");
@@ -27,9 +30,38 @@ export default function Register(props){
 
     const submit_handler = (e) => {
         e.preventDefault();
-        const data = {username, password, first_name, last_name, email, address, city, state, zip_code, phone_number, pin};
-        dispatch(register(data));
+        if(password != confirm_password){
+            dispatch({
+                type: USER_REGISTER_FAIL,
+                payload: "Password and Confirm Password does not match."
+            })
+        }
+        else if(!checked){
+            alert("Terms and condition must be agreed!");
+        }
+        else {
+            const data = {
+                username,
+                password,
+                first_name,
+                last_name,
+                email,
+                address,
+                city,
+                state,
+                zip_code,
+                phone_number,
+                pin
+            };
+            dispatch(register(data));
+        }
     }
+
+    useEffect(() => {
+        if(message){
+            navigate('/signin');
+        }
+    }, [message])
 
     return(
         <div className="div-container">
