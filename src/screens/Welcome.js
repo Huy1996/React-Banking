@@ -7,7 +7,7 @@ export default function Login(props) {
 
     return (
         <div className="div-container">
-            <h1>Hey, {userInfo.firstName} {userInfo.lastName} ^_^</h1>
+            <h1>Hey, {userInfo.first_name} {userInfo.last_name} ^_^</h1>
             <p>Thank you for being our valued customer!</p>
             <p id="welcome-message">Have a nice day ^^</p>
         </div>

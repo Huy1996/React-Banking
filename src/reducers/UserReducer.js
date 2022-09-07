@@ -22,3 +22,24 @@ export const userSigninReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export const userRegisterReducer = (state = {}, action) => {
+    switch(action.type){
+        case uc.USER_REGISTER_REQUEST:
+            return {
+                loading: true,
+            };
+        case uc.USER_REGISTER_SUCCESS:
+            return {
+                loading: false,
+                message: action.payload.message,
+            };
+        case uc.USER_SIGNIN_FAIL:
+            return {
+                loading: false,
+                error: action.payload.message,
+            };
+        default:
+            return state;
+    }
+}

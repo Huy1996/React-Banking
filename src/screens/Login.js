@@ -54,7 +54,7 @@ export default function Login(props) {
                         <button id="login_button" type="submit">LOG IN</button>
                     </div>
                 </form>
-                <p><a href="/registration">Not registered yet? Register here!</a></p>
+                <p><a href="/register">Not registered yet? Register here!</a></p>
             </div>
         </div>
     )

@@ -19,3 +19,18 @@ export const signin = (username, password) => async (dispatch) => {
         }
     )
 }
+
+export const register = (data) => async (dispatch) => {
+    const url = '/users/register';
+    await fetching(
+        dispatch,
+        method.POST,
+        url,
+        uc.USER_REGISTER_REQUEST,
+        uc.USER_REGISTER_SUCCESS,
+        uc.USER_REGISTER_FAIL,
+        {
+            sendData: {...data}
+        }
+    )
+}
