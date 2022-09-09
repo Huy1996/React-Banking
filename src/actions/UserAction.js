@@ -15,7 +15,7 @@ export const signin = (username, password) => async (dispatch) => {
         {
             sendData:   {username, password},
             store:      true,
-            storeName:  "USER_INFO"
+            storeName:  "USER_LOGIN"
         }
     )
 }
@@ -31,6 +31,56 @@ export const register = (data) => async (dispatch) => {
         uc.USER_REGISTER_FAIL,
         {
             sendData: {...data}
+        }
+    )
+}
+
+export const updateUserInfo = (data) => async (dispatch, getState) => {
+    const {userSignin: {userLogin}} = getState();
+    const url = '/users/'
+    await fetching(
+        dispatch,
+        method.PUT,
+        url,
+        uc.USER_UPDATE_REQUEST,
+        uc.USER_UPDATE_SUCCESS,
+        uc.USER_UPDATE_FAIL,
+        {
+            sendData: {...data},
+            header: {Authorization: `Bearer ${userLogin.access_token}`}
+        }
+    )
+}
+
+export const userInfoDetail = () => async(dispatch, getState) => {
+    const {userSignin: {userLogin}} = getState();
+    const url = '/users/'
+    await fetching(
+        dispatch,
+        method.GET,
+        url,
+        uc.USER_INFO_REQUEST,
+        uc.USER_INFO_SUCCESS,
+        uc.USER_INFO_FAIL,
+        {
+            header: {Authorization: `Bearer ${userLogin.access_token}`}
+        }
+    )
+}
+
+export const updateUserPassword = (data) => async(dispatch, getState) => {
+    const {userSignin: {userLogin}} = getState();
+    const url = '/users/login'
+    await fetching(
+        dispatch,
+        method.PUT,
+        url,
+        uc.USER_UPDATE_PASSWORD_REQUEST,
+        uc.USER_UPDATE_PASSWORD_SUCCESS,
+        uc.USER_UPDATE_PASSWORD_FAIL,
+        {
+            sendData: {...data},
+            header: {Authorization: `Bearer ${userLogin.access_token}`}
         }
     )
 }

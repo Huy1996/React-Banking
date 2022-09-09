@@ -20,7 +20,10 @@ export const fetching = async (dispatch, method, url, requestConstant, successCo
             method: method,
             url: URL + url,
             data: option.sendData,
-            headers: option.header,
+            headers: {
+                ...option.header,
+                "Content-Type": "application/json"
+            },
         })
 
         dispatch({

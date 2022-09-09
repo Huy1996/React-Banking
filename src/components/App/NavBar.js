@@ -8,6 +8,7 @@ export default function NavBar() {
                 <li>
                     <a href="/profile">Profile</a>
                     <ul>
+                        <li><a href="/changePassword">Change Password</a></li>
                         <li><a href="/editProfile">Update Profile</a></li>
                         <li><a href="/transaction">Transactions</a></li>
                     </ul>

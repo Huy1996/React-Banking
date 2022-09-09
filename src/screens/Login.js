@@ -15,25 +15,25 @@ export default function Login(props) {
     const [password, setPassword] = useState('');
 
     const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo, loading, error } = userSignin;
+    const { userLogin, loading, error } = userSignin;
 
-    const handleSubmit = async e => {
+    const submitHandler = async e => {
         e.preventDefault();
         dispatch(signin(username, password));
     }
 
     useEffect(() => {
-        if(userInfo){
+        if(userLogin){
             navigate('/');
         }
-    }, [navigate, userInfo])
+    }, [navigate, userLogin])
 
     return(
         <div className="login-container">
             {loading && <LoadingBox />}
             {error && <MessageBox variant="danger">{error}</MessageBox>}
             <div className="div-container">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={submitHandler}>
                     <label>
                         <p>Username</p>
                         <input

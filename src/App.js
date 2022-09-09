@@ -7,7 +7,7 @@ import Footer from "./components/App/Footer";
 
 function App() {
     const userSignin = useSelector(state => state.userSignin);
-    const { userInfo } = userSignin;
+    const { userLogin } = userSignin;
 
 
 
@@ -15,10 +15,10 @@ function App() {
         <div className="main">
             <header className="app-header">
                 <h1> SJSU ONLINE BANKING </h1>
-                {userInfo && <NavBar/>}
+                {userLogin && <NavBar/>}
             </header>
             <ScreenContainer />
-            { userInfo &&
+            { userLogin &&
             (<footer id="app-footer">
                 <Footer/>
             </footer>)}
