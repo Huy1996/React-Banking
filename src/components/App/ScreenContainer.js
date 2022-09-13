@@ -7,6 +7,7 @@ import Register from "../../screens/Register";
 import EditProfile from "../../screens/EditProfile";
 import ChangePassword from "../../screens/ChangePassword";
 import OpenAccount from "../../screens/OpenAccount";
+import AccountList from "../../screens/AccountList";
 
 export default function ScreenContainer(props) {
     return (
@@ -17,6 +18,7 @@ export default function ScreenContainer(props) {
             <Route path="/editProfile"          element={<Private><EditProfile /></Private>}    />
             <Route path="/changePassword"       element={<Private><ChangePassword /></Private>} />
             <Route path="/openAccount"          element={<Private><OpenAccount /></Private>}    />
+            <Route path="/account"              element={<Private><AccountList /></Private>}    />
         </Routes>
     )
 }

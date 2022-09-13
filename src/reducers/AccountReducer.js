@@ -20,3 +20,24 @@ export const accountCreateReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export const accountListReducer = (state={loading: true, accountList: []}, action) => {
+    switch(action.type){
+        case ac.ACCOUNT_LIST_REQUEST:
+            return {
+                loading: true,
+            };
+        case ac.ACCOUNT_LIST_SUCCESS:
+            return {
+                loading: false,
+                accountList: action.payload
+            }
+        case ac.ACCOUNT_LIST_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            };
+        default:
+            return state;
+    }
+}

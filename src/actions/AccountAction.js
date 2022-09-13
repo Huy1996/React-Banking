@@ -18,3 +18,19 @@ export const createAccount = (data) => async (dispatch, getState) => {
         }
     )
 }
+
+export const getAccountList = () => async (dispatch, getState) => {
+    const {userSignin: {userLogin}} = getState();
+    const url = '/accounts/'
+    await fetching(
+        dispatch,
+        method.GET,
+        url,
+        ac.ACCOUNT_LIST_REQUEST,
+        ac.ACCOUNT_LIST_SUCCESS,
+        ac.ACCOUNT_LIST_FAIL,
+        {
+            header: {Authorization: `Bearer ${userLogin.access_token}`}
+        }
+    )
+}

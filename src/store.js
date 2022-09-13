@@ -6,7 +6,7 @@ import {
     userSigninReducer, userUpdatePasswordReducer,
     userUpdateProfileReducer
 } from "./reducers/UserReducer";
-import {accountCreateReducer} from "./reducers/AccountReducer";
+import {accountCreateReducer, accountListReducer} from "./reducers/AccountReducer";
 
 const initialState = {
     userSignin: {
@@ -22,7 +22,8 @@ const reducer = combineReducers({
     userInfo:           userInfoReducer,
     userUpdatePassword: userUpdatePasswordReducer,
     // Account Reducer
-    accountCreate:      accountCreateReducer
+    accountCreate:      accountCreateReducer,
+    accountList:        accountListReducer
 })
 
 
