@@ -8,6 +8,7 @@ import EditProfile from "../../screens/EditProfile";
 import ChangePassword from "../../screens/ChangePassword";
 import OpenAccount from "../../screens/OpenAccount";
 import AccountList from "../../screens/AccountList";
+import Deposit from "../../screens/Deposit";
 
 export default function ScreenContainer(props) {
     return (
@@ -19,6 +20,7 @@ export default function ScreenContainer(props) {
             <Route path="/changePassword"       element={<Private><ChangePassword /></Private>} />
             <Route path="/openAccount"          element={<Private><OpenAccount /></Private>}    />
             <Route path="/account"              element={<Private><AccountList /></Private>}    />
+            <Route path="/mobileDeposit"        element={<Private><Deposit /></Private>}        />
         </Routes>
     )
 }

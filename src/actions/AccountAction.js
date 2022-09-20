@@ -34,3 +34,20 @@ export const getAccountList = () => async (dispatch, getState) => {
         }
     )
 }
+
+export const deposit = (data) => async (dispatch, getState) => {
+    const {userSignin: {userLogin}} = getState();
+    const url = '/accounts/deposit'
+    await fetching(
+        dispatch,
+        method.POST,
+        url,
+        ac.ACCOUNT_DEPOSIT_REQUEST,
+        ac.ACCOUNT_DEPOSIT_SUCCESS,
+        ac.ACCOUNT_DEPOSIT_FAIL,
+        {
+            sendData: {...data},
+            header: {Authorization: `Bearer ${userLogin.access_token}`}
+        }
+    )
+}
