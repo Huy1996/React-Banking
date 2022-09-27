@@ -55,7 +55,7 @@ function Transaction(props) {
                                 <td>{transaction.transaction_type}</td>
                                 <td>{transaction.time}</td>
                                 <td>{transaction.transaction_amount}</td>
-                                <td>{transaction.receiver ? transaction.receiver : "None"}</td>
+                                <td>{transaction.receiver ? `Account ending in ${transaction.receiver.slice(-6)}` : "None"}</td>
                                 <td>{transaction.checking_image ? <a href={transaction.checking_image}>Download</a> : "None"}</td>
                             </tr>
                         ))

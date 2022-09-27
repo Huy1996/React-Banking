@@ -37,7 +37,7 @@ function Deposit(props) {
         if(success){
             let text = `Confirmation (${transaction.id})\n${transaction.transaction_type} successful at ${transaction.time}`;
             if(window.confirm(text))
-                navigate('/transactions');
+                navigate('/transaction');
         }
     },[dispatch, navigate, success])
 
