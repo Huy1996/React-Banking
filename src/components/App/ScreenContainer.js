@@ -9,6 +9,7 @@ import ChangePassword from "../../screens/ChangePassword";
 import OpenAccount from "../../screens/OpenAccount";
 import AccountList from "../../screens/AccountList";
 import Deposit from "../../screens/Deposit";
+import Transaction from "../../screens/Transaction";
 
 export default function ScreenContainer(props) {
     return (
@@ -21,6 +22,7 @@ export default function ScreenContainer(props) {
             <Route path="/openAccount"          element={<Private><OpenAccount /></Private>}    />
             <Route path="/account"              element={<Private><AccountList /></Private>}    />
             <Route path="/mobileDeposit"        element={<Private><Deposit /></Private>}        />
+            <Route path="/transaction"          element={<Private><Transaction /></Private>}    />
         </Routes>
     )
 }

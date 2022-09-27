@@ -7,6 +7,7 @@ import {
     userUpdateProfileReducer
 } from "./reducers/UserReducer";
 import {accountCreateReducer, accountDepositReducer, accountListReducer} from "./reducers/AccountReducer";
+import {transactionListReducer} from "./reducers/TransactionReducer";
 
 const initialState = {
     userSignin: {
@@ -24,7 +25,9 @@ const reducer = combineReducers({
     // Account Reducer
     accountCreate:      accountCreateReducer,
     accountList:        accountListReducer,
-    accountDeposit:     accountDepositReducer
+    accountDeposit:     accountDepositReducer,
+    // Transaction Reducer
+    transactionList:    transactionListReducer
 })
 
 
