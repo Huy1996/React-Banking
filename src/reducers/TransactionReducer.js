@@ -22,3 +22,26 @@ export const transactionListReducer = (state={loading: false, transactionList:[]
             return state;
     }
 }
+
+export const transferReducer = (state={loading: false, success: false}, action) => {
+    switch (action.type){
+        case tc.TRANSFER_REQUEST:
+            return {
+                loading: true,
+            };
+        case tc.TRANSFER_SUCCESS:
+            return {
+                loading: false,
+                success: true,
+                transaction: action.payload
+            }
+        case tc.TRANSFER_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+        default:
+            return state;
+    }
+}
+
