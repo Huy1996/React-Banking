@@ -70,7 +70,7 @@ export const userInfoDetail = () => async(dispatch, getState) => {
 
 export const updateUserPassword = (data) => async(dispatch, getState) => {
     const {userSignin: {userLogin}} = getState();
-    const url = '/users/login'
+    const url = '/users/register'
     await fetching(
         dispatch,
         method.PUT,

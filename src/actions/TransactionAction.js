@@ -17,3 +17,20 @@ export const getTransactionList = (data) => async (dispatch, getState) => {
         }
     )
 }
+
+export const transferAction = (account_id, data) => async (dispatch, getState) => {
+    const {userSignin: {userLogin}} = getState();
+    const url = `/accounts/${account_id}/transfer`;
+    await fetching(
+        dispatch,
+        method.POST,
+        url,
+        tc.TRANSFER_REQUEST,
+        tc.TRANSFER_SUCCESS,
+        tc.TRANSFER_FAIL,
+        {
+            sendData: {...data},
+            header: {Authorization: `Bearer ${userLogin.access_token}`}
+        }
+    )
+}

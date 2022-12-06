@@ -21,7 +21,9 @@ function OpenAccount(props) {
 
     useEffect(() => {
         if(success){
-            navigate('/');
+            let text = `Successfully created ${account_type} account.`;
+            if(window.confirm(text))
+                navigate('/account');
         }
     },[dispatch, navigate, success])
 

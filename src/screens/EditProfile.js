@@ -26,7 +26,9 @@ export default function EditProfile(props){
 
     useEffect(() => {
         if(success){
-            navigate('/');
+            let text = `Successfully updated your profile.`;
+            if(window.confirm(text))
+                navigate('/');
         }
         if(!info || success){
             dispatch({

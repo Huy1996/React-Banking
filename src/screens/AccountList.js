@@ -19,27 +19,10 @@ function AccountList(props) {
     },[navigate, dispatch])
 
     function render_account(){
-        return (
-            <tbody>
-                {accountList && accountList.map((acc, idx) => (
-                    <tr>
-                        <td>{idx + 1}</td>
-                        <td>{acc.id}</td>
-                        <td>{acc.type}</td>
-                        <td>${acc.balance.toFixed(2)}</td>
-                        <td>{acc.status === 1 ? "Active" : "Deactivated"}</td>
-                    </tr>
-                ))}
-            </tbody>
-        )
-    }
-
-    return (
-        <div className="div-container">
-            {loading && <LoadingBox />}
-            {error && <MessageBox variant="danger">{error}</MessageBox>}
-            <table className="fl-table">
-                <thead>
+        if(accountList) {
+            return (
+                <>
+                    <thead>
                     <tr>
                         <th>Account #</th>
                         <th>ID</th>
@@ -47,7 +30,35 @@ function AccountList(props) {
                         <th>Balance</th>
                         <th>Status</th>
                     </tr>
-                </thead>
+                    </thead>
+                    <tbody>
+                    {accountList && accountList.map((acc, idx) => (
+                        <tr>
+                            <td>{idx + 1}</td>
+                            <td>{acc.id}</td>
+                            <td>{acc.type}</td>
+                            <td>${acc.balance.toFixed(2)}</td>
+                            <td>{acc.status === 1 ? "Active" : "Deactivated"}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </>)
+        }
+        else{
+            return (
+                <>
+                    <MessageBox variant="warning">{"No Account Open Yet."}</MessageBox>
+                    <p><a href="/openAccount">Open new account here!</a></p>
+                </>
+            )
+        }
+    }
+
+    return (
+        <div className="div-container">
+            {loading && <LoadingBox />}
+            {error && <MessageBox variant="danger">{error}</MessageBox>}
+            <table className="fl-table">
                 {render_account()}
             </table>
         </div>

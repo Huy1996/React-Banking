@@ -14,7 +14,8 @@ function App() {
     return (
         <div className="main">
             <header className="app-header">
-                <h1> SJSU ONLINE BANKING </h1>
+                <img id="symbol" src="spartan.png"/>
+                <h1> SPARTAN ONLINE BANKING </h1>
                 {userLogin && <NavBar/>}
             </header>
             <ScreenContainer />

@@ -61,7 +61,7 @@ function Transfer(props) {
                         error && <MessageBox variant="danger">{error}</MessageBox>}
                     <select name="account-id" id="account-id" onChange={e => set_id(e.target.value)}>
                         <option value="" selected={true}></option>
-                        {accountList.map((acc) =>
+                        {accountList && accountList.map((acc) =>
                             <option value={acc.id}>{acc.type} ending in {acc.id.slice(-4)}</option>
                         )}
                     </select>
@@ -75,7 +75,7 @@ function Transfer(props) {
                         error && <MessageBox variant="danger">{error}</MessageBox>}
                     <select name="account-id" id="account-id" onChange={e => set_receiver(e.target.value)}>
                         <option value="" selected={true}></option>
-                        {accountList.map((acc) =>
+                        {accountList && accountList.map((acc) =>
                             <option value={acc.id}>{acc.type} ending in {acc.id.slice(-4)}</option>
                         )}
                     </select>
