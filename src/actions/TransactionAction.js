@@ -2,9 +2,9 @@ import * as tc from '../constants/TransactionConstant.js';
 import {fetching} from "../helper";
 import * as method from "../constants/AJAXConstant";
 
-export const getTransactionList = (data) => async (dispatch, getState) => {
+export const getTransactionList = (account_id) => async (dispatch, getState) => {
     const {userSignin: {userLogin}} = getState();
-    const url = `/accounts/${data}/transaction`;
+    const url = `/accounts/${account_id}/transaction`;
     await fetching(
         dispatch,
         method.GET,
