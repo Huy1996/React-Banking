@@ -33,7 +33,7 @@ function Transaction(props) {
         if(transactionLoading) return (<LoadingBox />);
         else if(transactionError) return (<MessageBox variant="danger">{transactionError}</MessageBox>);
         else{
-            if (transactionList.length === 0) return (<MessageBox variant="warning">{"No transaction history."}</MessageBox>);
+            if (!transactionList || transactionList.length === 0) return (<MessageBox variant="warning">{"No transaction history."}</MessageBox>);
             else return(
                 <table className="fl-table">
                     <thead>
@@ -49,7 +49,7 @@ function Transaction(props) {
 
                     <tbody>
                     {
-                        transactionList.map(transaction => (
+                        transactionList && transactionList.map(transaction => (
                             <tr>
                                 <td>{transaction.id}</td>
                                 <td>{transaction.transaction_type}</td>
@@ -76,7 +76,7 @@ function Transaction(props) {
                 <label>Account</label>
                 <select name="account-id" id="account-id" onChange={e => set_id(e.target.value)}>
                     <option value="" selected={true}></option>
-                    {accountList.map((acc) =>
+                    {accountList && accountList.map((acc) =>
                         <option value={acc.id}>{acc.type} ending in {acc.id.slice(-4)}</option>
                     )}
                 </select>

@@ -38,7 +38,9 @@ function ChangePassword(props) {
             dispatch({
                 type: USER_UPDATE_PASSWORD_RESET
             });
-            navigate('/');
+            let text = `Successfully updated your password.`;
+            if(window.confirm(text))
+                navigate('/');
         }
     }, [navigate, dispatch, success])
 

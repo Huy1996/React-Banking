@@ -44,4 +44,3 @@ export const transferReducer = (state={loading: false, success: false}, action) 
             return state;
     }
 }
-

@@ -17,16 +17,16 @@ body {
   background-color: #282c34;
   width: 100%;
   text-align: center;
-  color: white;
+  color: #00ffea;
   position: float;
   display: flex;
   flex-direction: column;
 }
 
 .app-header h1 {
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  padding: 20px 0 10px 0;
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+  padding: 10px 0 10px 0;
 }
 
 input[type="text"],
@@ -81,6 +81,13 @@ input[type="submit"]:hover {
   padding: 8px;
 }
 
+#symbol{
+  width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*  footer css style */
 #footer {
   position: fixed;
@@ -102,7 +109,7 @@ input[type="submit"]:hover {
   text-align: center;
   width: 100%;
   font-size: 18px;
-  min-height: 100%;
+  height: auto;
 }
 
 .div-container img {
@@ -155,7 +162,7 @@ input[type="submit"]:hover {
 
 .fl-table td {
   border-right: 1px solid #f8f8f8;
-  font-size: 18px;
+  font-size: 13px;
 }
 
 .fl-table thead th {
@@ -169,5 +176,5 @@ input[type="submit"]:hover {
 }
 
 .fl-table tr:nth-child(even) {
-  background: #f8f8f8;
+  background: white;
 }
